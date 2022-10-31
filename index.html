@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Market IVS</title>
+</head>
+<body>
+ 
+    <div class="header">
+        <h1>MARKET INVENTORY SYSTEM</h1>
+    </div>
+ <div class="parentelement">   
+    <div class="detail"> 
+        <label class="name">NAME:</label>
+        <input type="text">
+        <label class="date">DATE:</label>
+        <input type="date">
+    </div>
+    <table border="1">
+        <tr>
+            <th>S/N</th>
+            <th>GOODS</th>
+            <th>QUANTITY</th>
+            <th>PRICE</th>
+            <th>TOTAL</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td><input type="text"></td>
+            <td><input type="text" id="qty1" onkeyup="multiplynumber()"></td>
+            <td><input type="text" id="price1" onkeyup="multiplynumber()"></td>
+            <td id="tot1"></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><input type="text"></td>
+            <td><input type="text" id="qty2" onkeyup="multiplynumber()"></td>
+            <td><input type="text" id="price2" onkeyup="multiplynumber()"></td>
+            <td id="tot2"></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><input type="text"></td>
+            <td><input type="text" id="qty3"  onkeyup="multiplynumber()"></td>
+            <td><input type="text" id="price3"  onkeyup="multiplynumber()"></td>
+            <td id="tot3"></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td><input type="text"></td>
+            <td><input type="text" id="qty4"  onkeyup="multiplynumber()"></td>
+            <td><input type="text" id="price4"  onkeyup="multiplynumber()"></td>
+            <td id="tot4"></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td><input type="text"></td>
+            <td><input type="text" id="qty5"  onkeyup="multiplynumber()"></td>
+            <td><input type="text" id="price5"  onkeyup="multiplynumber()"></td>
+            <td id="tot5"></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td><input type="text"></td>
+            <td><input type="text" id="qty6"  onkeyup="multiplynumber()"></td>
+            <td><input type="text" id="price6"  onkeyup="multiplynumber()"></td>
+            <td id="tot6"></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td><input type="text"></td>
+            <td><input type="text" id="qty7"  onkeyup="multiplynumber()"></td>
+            <td><input type="text" id="price7"  onkeyup="multiplynumber()"></td>
+            <td id="tot7"></td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td><input type="text"></td>
+            <td><input type="text" id="qty8"  onkeyup="multiplynumber()"></td>
+            <td><input type="text" id="price8"  onkeyup="multiplynumber()"></td>
+            <td id="tot8"></td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td><input type="text"></td>
+            <td><input type="text" id="qty9"  onkeyup="multiplynumber()"></td>
+            <td><input type="text" id="price9"  onkeyup="multiplynumber()"></td>
+            <td id="tot9"></td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td><input type="text"></td>
+            <td><input type="text" id="qty10"  onkeyup="multiplynumber()"></td>
+            <td><input type="text" id="price10"  onkeyup="multiplynumber()"></td>
+            <td id="tot10"></td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td><input type="text"></td>
+            <td><input type="text" id="qty11"  onkeyup="multiplynumber()"></td>
+            <td><input type="text" id="price11"  onkeyup="multiplynumber()"></td>
+            <td id="tot11"></td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td><input type="text"></td>
+            <td><input type="text" id="qty12"  onkeyup="multiplynumber()"></td>
+            <td><input type="text" id="price12"  onkeyup="multiplynumber()"></td>
+            <td id="tot12"></td>
+        </tr>
+    </table>
+    <div class="grandtotal">
+        <button id="reset" onclick="resetnumber()">Reset</button>
+        <button id="finaltotal" onclick="addnumber()">Gross Total</button>
+        <div class="grosstot">
+            <h2 id="grosstotal"></h2>
+        </div>
+    </div>
+  </div>  
+
+    <div class="contact">
+        <p>Get In Touch With Us For Your Customized Market Inventory System suitable For Your Business </p>
+        <a  id="tel" href="tel:08023400518">Contact Us</a>
+        <p>CopyRight &copy; 2022 EmaxConcepts.com</p>
+        
+    </div>
+     
+
+
+ <!-------------------------------------------JAVASCRIPT---------------------------------------------------->         
+    <script>
+        let tot1;
+        let tot2;
+        let tot3;
+        let tot4;
+        let tot5;
+        let tot6;
+        let tot7;
+        let tot8;
+        let tot9;
+        let tot10;
+        let tot11;
+        let tot12;
+
+        function multiplynumber(){
+            let qty1 = document.getElementById('qty1').value
+                qty1 = parseInt(qty1);
+            let price1 = document.getElementById('price1').value
+                price1 = parseInt(price1);
+            tot1 = qty1 * price1;
+
+            let qty2 = document.getElementById('qty2').value;
+                qty2 = parseInt(qty2)
+            let price2 = document.getElementById('price2').value;
+                price2 = parseInt(price2); 
+            tot2 = qty2 * price2;
+
+            
+            let qty3 = document.getElementById('qty3').value;
+                qty3 = parseInt(qty3)
+            let price3 = document.getElementById('price3').value;
+                price3 = parseInt(price3); 
+            tot3 = qty3 * price3;
+
+            
+            let qty4 = document.getElementById('qty4').value;
+                qty4 = parseInt(qty4)
+            let price4 = document.getElementById('price4').value;
+                price4 = parseInt(price4); 
+            tot4 = qty4 * price4;
+
+            
+            let qty5 = document.getElementById('qty5').value;
+                qty5 = parseInt(qty5)
+            let price5 = document.getElementById('price5').value;
+                price5 = parseInt(price5); 
+            tot5 = qty5 * price5;
+
+            
+            let qty6 = document.getElementById('qty6').value;
+                qty6 = parseInt(qty6)
+            let price6 = document.getElementById('price6').value;
+                price6 = parseInt(price6); 
+            tot6 = qty6 * price6;
+
+            
+            let qty7 = document.getElementById('qty7').value;
+                qty7 = parseInt(qty7)
+            let price7 = document.getElementById('price7').value;
+                price7 = parseInt(price7); 
+            tot7 = qty7 * price7;
+
+            
+            let qty8 = document.getElementById('qty8').value;
+                qty8 = parseInt(qty8)
+            let price8 = document.getElementById('price8').value;
+                price8 = parseInt(price8); 
+            tot8 = qty8 * price8;
+
+            
+            let qty9 = document.getElementById('qty9').value;
+                qty9 = parseInt(qty9)
+            let price9 = document.getElementById('price9').value;
+                price9 = parseInt(price9); 
+            tot9 = qty9 * price9;
+
+            
+            let qty10 = document.getElementById('qty10').value;
+                qty10 = parseInt(qty10)
+            let price10 = document.getElementById('price10').value;
+                price10 = parseInt(price10); 
+            tot10 = qty10 * price10;
+
+            
+            let qty11 = document.getElementById('qty11').value;
+                qty11 = parseInt(qty11)
+            let price11 = document.getElementById('price11').value;
+                price11 = parseInt(price11); 
+            tot11 = qty11 * price11;
+
+            
+            let qty12 = document.getElementById('qty12').value;
+                qty12 = parseInt(qty12)
+            let price12 = document.getElementById('price12').value;
+                price12 = parseInt(price12); 
+            tot12 = qty12 * price12;
+                     
+            
+            document.getElementById('tot1').innerHTML = tot1;
+            document.getElementById('tot2').innerHTML = tot2;
+            document.getElementById('tot3').innerHTML = tot3;
+            document.getElementById('tot4').innerHTML = tot4;
+            document.getElementById('tot5').innerHTML = tot5;
+            document.getElementById('tot6').innerHTML = tot6;
+            document.getElementById('tot7').innerHTML = tot7;
+            document.getElementById('tot8').innerHTML = tot8;
+            document.getElementById('tot9').innerHTML = tot9;
+            document.getElementById('tot10').innerHTML = tot10;
+            document.getElementById('tot11').innerHTML = tot11;
+            document.getElementById('tot12').innerHTML = tot12;
+        }
+
+         function addnumber(){
+
+            let finalcalc = tot1 + tot2 + tot3 + tot4 + tot5 + tot6 + tot7 + tot8 + tot9 + tot10 + tot11 + tot12;
+            document.getElementById('grosstotal').innerHTML = finalcalc;
+        }
+
+        function resetnumber(){
+
+            document.getElementById('qty1').value = "";
+            document.getElementById('price1').value = "";
+            document.getElementById('qty2').value = "";
+            document.getElementById('price2').value = "";
+            document.getElementById('qty3').value = "";
+            document.getElementById('price3').value = "";
+            document.getElementById('qty4').value = "";
+            document.getElementById('price4').value = "";
+            document.getElementById('qty5').value = "";
+            document.getElementById('price5').value = "";
+            document.getElementById('qty6').value = "";
+            document.getElementById('price6').value = "";
+            document.getElementById('qty7').value = "";
+            document.getElementById('price7').value = "";
+            document.getElementById('qty8').value = "";
+            document.getElementById('price8').value = "";
+            document.getElementById('qty9').value = "";
+            document.getElementById('price9').value = "";
+            document.getElementById('qty10').value = "";
+            document.getElementById('price10').value = "";
+            document.getElementById('qty11').value = "";
+            document.getElementById('price11').value = "";
+            document.getElementById('qty12').value = "";
+            document.getElementById('price12').value = "";
+
+            document.getElementById('tot1').innerHTML = "";
+            document.getElementById('tot2').innerHTML = "";
+            document.getElementById('tot3').innerHTML = "";
+            document.getElementById('tot4').innerHTML = "";
+            document.getElementById('tot5').innerHTML = "";
+            document.getElementById('tot6').innerHTML = "";
+            document.getElementById('tot7').innerHTML = "";
+            document.getElementById('tot8').innerHTML = "";
+            document.getElementById('tot9').innerHTML = "";
+            document.getElementById('tot10').innerHTML = "";
+            document.getElementById('tot11').innerHTML = "";
+            document.getElementById('tot12').innerHTML = "";
+            document.getElementById('grosstotal').innerHTML = "";
+
+        }
+
+
+
+    </script>
+</body>
+</html>
